@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ReverseBuilder - Website Reverse Engineering and Visual Rebuilding Platform.">
+  <title>ReverseBuilder - Turn Website References Into Editable Designs</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/editor.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <div id="view-landing" class="app-view active">
+    <header class="global-header">
+      <div class="header-left">
+        <a href="#/landing" class="brand-link">
+          <div class="brand-icon">⚡</div>
+          <span>ReverseBuilder</span>
+          <span class="brand-tag">v1.0</span>
+        </a>
+        <nav class="nav-links">
+          <a href="#features-section" class="nav-item">Features</a>
+          <a href="#how-it-works" class="nav-item">How It Works</a>
+          <a href="#templates-section" class="nav-item">Templates</a>
+          <a href="#tech-specs" class="nav-item">Tech Specs</a>
+          <a href="#faq-section" class="nav-item">FAQ</a>
+        </nav>
+      </div>
+      <div class="header-right">
+        <a href="#/dashboard" class="btn btn-ghost btn-sm">Projects</a>
+        <a href="#/dashboard" class="btn btn-primary btn-sm trigger-modal-new">Start Building Free</a>
+      </div>
+    </header>
+
+    <section class="landing-hero">
+      <div class="hero-inner">
+        <div class="badge badge-emerald" style="margin-bottom: 1.5rem;">
+          <span>✦</span> Next-Gen Web Reverse Engineering Platform
+        </div>
+        <h1 class="hero-title">
+          Turn Website References Into <span class="gradient-text">Editable Designs</span>
+        </h1>
+        <p class="hero-subtitle">
+          Import any permitted website URL or upload a reference screenshot. ReverseBuilder analyzes visual structure, reconstructs an editable component tree, and exports clean, dependency-free HTML and CSS in seconds.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#/dashboard" class="btn btn-primary btn-lg">Start Building Free →</a>
+          <button class="btn btn-secondary btn-lg" onclick="App.createProjectFromTemplate('tpl-saas-landing')">Explore Live Demo</button>
+        </div>
+      </div>
+
+      <!-- Before & After Comparison Slider -->
+      <div class="comparison-section">
+        <div style="text-align: center; margin-bottom: 1rem;">
+          <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">DRAG THE SLIDER TO COMPARE REFERENCE VS RECONSTRUCTION</span>
+        </div>
+        <div class="comparison-wrapper" id="comparison-wrapper">
+          <div class="comparison-image comparison-before">
+            <span class="comparison-pill pill-before">Reconstructed (Editable AST)</span>
+            <div style="padding: 40px; color: #fff; display: flex; flex-direction: column; justify-content: center; height: 100%;">
+              <span class="badge" style="width: fit-content;">✦ REVERSEBUILDER AST</span>
+              <h2 style="font-size: 2.2rem; font-weight: 800; margin: 12px 0;">Modular Responsive Components</h2>
+              <p style="color: var(--text-muted); max-width: 500px; font-size: 1rem;">Clean semantic HTML5 markup, zero framework bloat, and pure CSS custom properties ready for immediate customization.</p>
+              <div style="display: flex; gap: 12px; margin-top: 20px;">
+                <span class="btn btn-primary btn-sm">Primary CTA</span>
+                <span class="btn btn-outline btn-sm">Learn More</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="comparison-image comparison-after" id="comparison-after">
+            <span class="comparison-pill pill-after">Original Reference</span>
+            <div style="padding: 40px; color: #94a3b8; display: flex; flex-direction: column; justify-content: center; height: 100%; background: #060911;">
+              <span class="badge" style="width: fit-content; background: rgba(148, 163, 184, 0.1); color: #94a3b8; border-color: #334155;">RAW REFERENCE SNAPSHOT</span>
+              <h2 style="font-size: 2.2rem; font-weight: 800; margin: 12px 0; color: #cbd5e1;">Target Web Layout & Visuals</h2>
+              <p style="color: #64748b; max-width: 500px; font-size: 1rem;">Static pixel data extracted via automated browser headless engine or user-uploaded PNG screenshot.</p>
+              <div style="display: flex; gap: 12px; margin-top: 20px;">
+                <span class="btn btn-secondary btn-sm" style="opacity: 0.6;">Target Action</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="comparison-handle" id="comparison-handle">⇔</div>
+        </div>
+      </div>
+
+      <!-- HTML/CSS Built Product Preview -->
+      <div class="product-preview-frame">
+        <div class="preview-topbar">
+          <div class="preview-dots">
+            <div class="dot dot-red"></div>
+            <div class="dot dot-amber"></div>
+            <div class="dot dot-green"></div>
+          </div>
+          <div class="preview-address-bar">
+            <span>🔒</span>
+            <span>https://reversebuilder.local/editor?id=saas-showcase</span>
+          </div>
+          <span style="font-size: 0.75rem; color: var(--text-dim); margin-left: auto;">Interactive Visual Workbench</span>
+        </div>
+        <div class="preview-body-mock">
+          <div class="mock-sidebar">
+            <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase;">Components</span>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <div style="background: #1e293b; padding: 8px; border-radius: 6px; font-size: 0.8rem; text-align: left;">🧭 Navigation Bar</div>
+              <div style="background: #1e293b; padding: 8px; border-radius: 6px; font-size: 0.8rem; text-align: left;">🚀 Hero Showcase</div>
+              <div style="background: #1e293b; padding: 8px; border-radius: 6px; font-size: 0.8rem; text-align: left;">⚡ Feature Cards</div>
+              <div style="background: #1e293b; padding: 8px; border-radius: 6px; font-size: 0.8rem; text-align: left;">💳 Pricing Table</div>
+              <div style="background: #1e293b; padding: 8px; border-radius: 6px; font-size: 0.8rem; text-align: left;">✉️ Contact Form</div>
+            </div>
+          </div>
+          <div class="mock-canvas">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 12px;">
+              <strong style="font-size: 1.1rem; color: #0f172a;">CloudScale Platform</strong>
+              <div style="display: flex; gap: 16px; font-size: 0.85rem; color: #64748b;">
+                <span>Features</span><span>Pricing</span><span>Docs</span>
+              </div>
+            </div>
+            <div style="text-align: center; padding: 30px 0;">
+              <span style="display: inline-block; padding: 4px 12px; background: rgba(99, 102, 241, 0.1); color: #4f46e5; border-radius: 99px; font-size: 0.75rem; font-weight: 700;">LIVE PREVIEW CANVAS</span>
+              <h3 style="font-size: 1.8rem; font-weight: 800; color: #0f172a; margin: 10px 0;">Observability for Microservices</h3>
+              <p style="color: #64748b; font-size: 0.95rem; max-width: 420px; margin: 0 auto 16px;">Real-time traces, metrics, and incident diagnosis without code modification.</p>
+              <button class="btn btn-primary btn-sm">Get Started Free</button>
+            </div>
+          </div>
+          <div class="mock-inspector">
+            <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase;">Inspector Controls</span>
+            <div style="font-size: 0.8rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 10px;">
+              <div>
+                <label style="display: block; font-size: 0.75rem; margin-bottom: 4px;">Heading Text</label>
+                <div style="background: #0b1120; padding: 6px; border-radius: 4px; border: 1px solid #334155; color: #fff;">Observability for Microservices</div>
+              </div>
+              <div>
+                <label style="display: block; font-size: 0.75rem; margin-bottom: 4px;">Primary Color</label>
+                <div style="display: flex; gap: 8px; align-items: center;">
+                  <div style="width: 20px; height: 20px; background: #6366f1; border-radius: 4px;"></div>
+                  <span style="font-family: monospace;">#6366f1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="landing-section" id="features-section">
+      <div class="section-head">
+        <div class="badge">Architecture & Capabilities</div>
+        <h2 class="section-title">Everything Needed to Reconstruct Web Layouts</h2>
+        <p class="section-subtitle">ReverseBuilder bridges inspiration and production frontend code with automated extraction, structural normalization, and real-time visual editing.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-box-icon">🌐</div>
+          <h3 class="feature-box-title">URL Reverse Engineering</h3>
+          <p class="feature-box-desc">Automated Playwright headless crawling captures desktop & mobile viewports, extracts semantic headings, computed style colors, and page hierarchies.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-box-icon">🖼️</div>
+          <h3 class="feature-box-title">Screenshot Reconstruction</h3>
+          <p class="feature-box-desc">Upload PNG, JPEG, or WebP references. Dual analysis engine leverages Vision AI models when configured, backed by an intelligent heuristic layout generator.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-box-icon">🎨</div>
+          <h3 class="feature-box-title">Visual Live Workbench</h3>
+          <p class="feature-box-desc">Double-click inline text editing, section reordering, real-time color and typography adjustment, and side-by-side reference overlay alignment.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-box-icon">📱</div>
+          <h3 class="feature-box-title">Multi-Viewport Presets</h3>
+          <p class="feature-box-desc">Instant toggle between Desktop (1200px), Tablet (768px), and Mobile (375px) viewports with genuine responsive CSS media queries.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-box-icon">📦</div>
+          <h3 class="feature-box-title">Clean Code Export</h3>
+          <p class="feature-box-desc">Download a complete, organized ZIP archive with semantic index.html, zero-dependency styles.css, vanilla script.js, and local run instructions.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-box-icon">🛡️</div>
+          <h3 class="feature-box-title">SSRF & Security Shield</h3>
+          <p class="feature-box-desc">Strict server-side validation blocks private IPv4/IPv6 subnets, loopback addresses, cloud metadata endpoints, and directory traversal vectors.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="landing-section" id="how-it-works">
+      <div class="section-head">
+        <div class="badge">Workflow</div>
+        <h2 class="section-title">From Reference to Production in 3 Steps</h2>
+        <p class="section-subtitle">No manual boilerplate. Just clean, editable building blocks.</p>
+      </div>
+
+      <div class="steps-container">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem;">Input Reference</h3>
+          <p style="color: var(--text-muted); line-height: 1.6;">Paste a target website URL or drop a screenshot into the dashboard. ReverseBuilder verifies safety and extracts structural metadata.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem;">Visual Customization</h3>
+          <p style="color: var(--text-muted); line-height: 1.6;">Your site opens in the visual builder. Add components from the library, edit copy directly on canvas, and adjust styles in the inspector.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem;">Instant Export</h3>
+          <p style="color: var(--text-muted); line-height: 1.6;">Click Export to download an unbundled ZIP package containing pure semantic HTML5 and responsive CSS. Ready for GitHub, Vercel, or Netlify.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Templates Gallery Section -->
+    <section class="landing-section" id="templates-section">
+      <div class="section-head">
+        <div class="badge">Starter Library</div>
+        <h2 class="section-title">Pre-Built Production Templates</h2>
+        <p class="section-subtitle">Select from fully editable starter designs crafted with modern typography and responsive layouts.</p>
+      </div>
+
+      <div class="template-grid" id="landing-templates-grid">
+        <!-- Injected via App.loadLandingTemplates() -->
+      </div>
+    </section>
+
+    <!-- Tech Specs Section -->
+    <section class="landing-section" id="tech-specs">
+      <div class="section-head">
+        <div class="badge">Technical Blueprint</div>
+        <h2 class="section-title">Engineered with Precision</h2>
+        <p class="section-subtitle">A transparent breakdown of ReverseBuilder architecture and capabilities.</p>
+      </div>
+
+      <div style="background: var(--bg-card); border: 1px solid var(--border-default); border-radius: var(--radius-xl); padding: var(--space-2xl); max-width: 960px; margin: 0 auto;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem;">
+          <div>
+            <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--accent-cyan); margin-bottom: 8px;">Automated Crawler</h4>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5;">Headless Playwright Chromium engine with strict 15s timeout, sandboxed execution, and DOM tree parser.</p>
+          </div>
+          <div>
+            <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 8px;">Strict AST Schema</h4>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5;">Deterministic JSON component AST with XSS sanitization, numerical boundaries, and safe property defaults.</p>
+          </div>
+          <div>
+            <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--accent-emerald); margin-bottom: 8px;">Zero Runtime Lock-in</h4>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5;">Exported projects require no Node.js, React, or build pipeline. Run locally with any static web server.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="landing-section" id="faq-section">
+      <div class="section-head">
+        <div class="badge">Common Questions</div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Everything you need to know about ReverseBuilder capabilities.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item open">
+          <button class="faq-question">
+            <span>Does ReverseBuilder copy the original website backend or database?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            No. ReverseBuilder is honest: reverse engineering reconstructs an editable frontend visual representation and semantic component structure. It does not extract proprietary backends, private databases, or hidden server-side logic.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What happens if an external Vision AI key is not configured?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            ReverseBuilder includes a built-in Heuristic Reconstruction Engine. If no Gemini or OpenAI API key is supplied, screenshot imports generate an editable layout scaffold that you can immediately customize using the visual inspector and side-by-side reference viewer.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How does the SSRF protection work on URL imports?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Before navigation, the server resolves DNS records and checks destination IPs against private, loopback, carrier-grade NAT, and cloud metadata subnets (such as 169.254.169.254, 127.0.0.1, 10.0.0.0/8). Any forbidden destination is rejected immediately.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I deploy the exported project anywhere?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes! The exported ZIP contains standard HTML5, clean CSS, and vanilla JS. It can be hosted on GitHub Pages, Netlify, Vercel, Cloudflare Pages, AWS S3, or served with Python (<code>python -m http.server</code>).
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Landing Footer -->
+    <footer class="landing-footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-link">
+            <div class="brand-icon">⚡</div>
+            <span>ReverseBuilder</span>
+          </div>
+          <p>The visual website reverse engineering and prototyping platform for engineers, founders, and designers.</p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Product</h4>
+          <ul class="footer-col-links">
+            <li><a href="#/dashboard">Dashboard</a></li>
+            <li><a href="#features-section">Features</a></li>
+            <li><a href="#templates-section">Templates</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Architecture</h4>
+          <ul class="footer-col-links">
+            <li><a href="#tech-specs">Tech Specs</a></li>
+            <li><a href="#faq-section">FAQ</a></li>
+            <li><a href="/api/health" target="_blank">Health Check API</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Platform</h4>
+          <ul class="footer-col-links">
+            <li><a href="#/dashboard">New Project</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <span>© 2026 ReverseBuilder. Built with precision and vanilla technologies.</span>
+        <span>Node.js • Express • Playwright • Pure CSS</span>
+      </div>
+    </footer>
+  </div>
+
+  <div id="view-dashboard" class="app-view">
+    <header class="global-header">
+      <div class="header-left">
+        <a href="#/landing" class="brand-link">
+          <div class="brand-icon">⚡</div>
+          <span>ReverseBuilder</span>
+        </a>
+      </div>
+      <div class="header-right">
+        <a href="#/landing" class="btn btn-ghost btn-sm">Home</a>
+        <button class="btn btn-secondary btn-sm trigger-modal-url">Import by URL</button>
+        <button class="btn btn-secondary btn-sm trigger-modal-screenshot">Upload Screenshot</button>
+        <button class="btn btn-primary btn-sm trigger-modal-new">+ New Project</button>
+      </div>
+    </header>
+
+    <main class="dashboard-container">
+      <div class="dashboard-header">
+        <div class="dash-title-group">
+          <h1>Projects Workbench</h1>
+          <p>Manage your reconstructed websites, import new references, or start from scratch.</p>
+        </div>
+        <div class="dash-action-buttons">
+          <button class="btn btn-secondary trigger-modal-url">🌐 Import URL</button>
+          <button class="btn btn-secondary trigger-modal-screenshot">📷 Upload Screenshot</button>
+          <button class="btn btn-primary trigger-modal-new">+ Create Project</button>
+        </div>
+      </div>
+
+      <div class="dashboard-toolbar">
+        <div class="dash-search-box">
+          <span class="dash-search-icon">🔍</span>
+          <input type="text" class="input-text" id="dash-search-input" placeholder="Search projects by name, description, or URL...">
+        </div>
+        <div class="dash-filter-controls">
+          <select class="input-select" id="dash-sort-select" style="min-width: 180px;">
+            <option value="updatedDesc">Last Modified (Newest)</option>
+            <option value="updatedAsc">Last Modified (Oldest)</option>
+            <option value="nameAsc">Name (A-Z)</option>
+            <option value="nameDesc">Name (Z-A)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="projects-grid" id="dashboard-projects-grid"></div>
+    </main>
+  </div>
+
+  <div id="view-editor" class="app-view editor-view">
+    <header class="editor-topbar">
+      <div class="topbar-left">
+        <a href="#/dashboard" class="btn btn-ghost btn-sm" title="Back to Dashboard">← Dashboard</a>
+        <input type="text" class="project-title-input" id="project-title-input" value="Untitled Project" title="Click to rename project">
+        <div class="save-indicator" id="save-indicator">
+          <div class="save-dot"></div>
+          <span class="save-text">Saved</span>
+        </div>
+      </div>
+
+      <div class="topbar-center">
+        <div class="history-btn-group">
+          <button class="btn btn-ghost btn-sm btn-icon-only" id="btn-undo" title="Undo (Ctrl+Z)" disabled>↶</button>
+          <button class="btn btn-ghost btn-sm btn-icon-only" id="btn-redo" title="Redo (Ctrl+Y)" disabled>↷</button>
+        </div>
+
+        <div class="viewport-switcher">
+          <button class="viewport-btn active" data-mode="desktop" title="Desktop Viewport (1200px)">🖥️ Desktop</button>
+          <button class="viewport-btn" data-mode="tablet" title="Tablet Viewport (768px)">📱 Tablet</button>
+          <button class="viewport-btn" data-mode="mobile" title="Mobile Viewport (375px)">📱 Mobile</button>
+        </div>
+
+        <button class="btn btn-outline btn-sm" id="btn-preview-mode" title="Toggle Interactive Preview">👁️ Preview</button>
+      </div>
+
+      <div class="topbar-right">
+        <button class="btn btn-secondary btn-sm" id="btn-save-project">💾 Save</button>
+        <button class="btn btn-primary btn-sm" id="btn-export-project">📦 Export ZIP</button>
+      </div>
+    </header>
+
+    <div class="editor-workspace">
+      <aside class="editor-sidebar-left">
+        <div class="tabs-header">
+          <button class="tab-btn sidebar-left-tab-btn active" data-tab="components">Components</button>
+          <button class="tab-btn sidebar-left-tab-btn" data-tab="layers">Layers</button>
+          <button class="tab-btn sidebar-left-tab-btn" data-tab="reference">Reference</button>
+        </div>
+
+        <div class="sidebar-tab-content">
+          <div class="sidebar-tab-panel" id="tab-panel-components">
+            <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase; margin-bottom: 12px;">Component Library</div>
+            <div class="components-palette-grid" id="components-palette-grid"></div>
+          </div>
+
+          <div class="sidebar-tab-panel" id="tab-panel-layers" style="display: none;">
+            <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase; margin-bottom: 12px;">Section Hierarchy</div>
+            <div class="layers-tree-list" id="layers-tree-list"></div>
+          </div>
+
+          <div class="sidebar-tab-panel" id="tab-panel-reference" style="display: none;">
+            <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase; margin-bottom: 12px;">Original Reference</div>
+            <div id="reference-drawer-container"></div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="editor-canvas-stage">
+        <div class="canvas-device-wrapper viewport-desktop" id="canvas-device-wrapper"></div>
+      </main>
+
+      <aside class="editor-sidebar-right">
+        <div class="inspector-header">
+          <h3 class="inspector-title" id="inspector-title">Properties Inspector</h3>
+        </div>
+        <div class="inspector-body" id="inspector-body"></div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- MODALS -->
+  <div class="modal-overlay" id="modal-import-url">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">🌐 Import Website by URL</h3>
+        <button class="modal-close-btn modal-close-trigger">&times;</button>
+      </div>
+      <form id="form-import-url">
+        <div class="modal-body">
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+            Enter an authorized public website URL. Our SSRF-shielded Playwright engine will inspect the page, extract headings, typography, colors, and layout sections.
+          </p>
+          <div class="form-group">
+            <label class="form-label">Target URL</label>
+            <input type="url" class="input-text" id="import-url-input" required placeholder="https://example.com" pattern="https?://.*">
+          </div>
+          <div id="import-url-status" style="display: none; padding: 10px; border-radius: 6px; background: rgba(15, 23, 42, 0.8); font-size: 0.85rem; margin-top: 10px;"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-close-trigger">Cancel</button>
+          <button type="submit" class="btn btn-primary">Start Reverse Engineering →</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-import-screenshot">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">📷 Import from Screenshot</h3>
+        <button class="modal-close-btn modal-close-trigger">&times;</button>
+      </div>
+      <form id="form-import-screenshot">
+        <div class="modal-body">
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+            Upload a reference screenshot of a website (PNG, JPEG, WebP). ReverseBuilder analyzes visual patterns and constructs an editable layout scaffold.
+          </p>
+          <div class="dropzone" id="screenshot-dropzone">
+            <div class="dropzone-icon">📁</div>
+            <div class="dropzone-title">Click to upload or drag & drop</div>
+            <div class="dropzone-hint">PNG, JPEG, WebP (Max 15MB)</div>
+            <input type="file" id="import-file-input" accept="image/png,image/jpeg,image/webp" style="display: none;">
+          </div>
+          <div id="screenshot-preview-container" style="display: none; margin-top: 15px; text-align: center;">
+            <img id="screenshot-preview-img" style="max-height: 180px; border-radius: 8px; margin: 0 auto; border: 1px solid var(--border-default);">
+          </div>
+          <div id="import-screenshot-status" style="display: none; padding: 10px; border-radius: 6px; background: rgba(15, 23, 42, 0.8); font-size: 0.85rem; margin-top: 10px;"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-close-trigger">Cancel</button>
+          <button type="submit" class="btn btn-primary">Reconstruct Design →</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-new-project">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title">✨ Create New Project</h3>
+        <button class="modal-close-btn modal-close-trigger">&times;</button>
+      </div>
+      <form id="form-new-project">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Project Name</label>
+            <input type="text" class="input-text" id="new-proj-name-input" required placeholder="My Awesome Website">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Starter Template (Optional)</label>
+            <select class="input-select" id="new-proj-template-select">
+              <option value="">Start from Scratch (Blank Canvas)</option>
+              <option value="tpl-saas-landing">SaaS Landing Page (CloudPulse)</option>
+              <option value="tpl-dev-portfolio">Developer Portfolio (Arjun Patel)</option>
+              <option value="tpl-startup-home">Startup Homepage (VortexAI)</option>
+              <option value="tpl-agency-website">Agency Website (Monolith Studio)</option>
+              <option value="tpl-product-landing">Product Landing Page (Aura Audio)</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary modal-close-trigger">Cancel</button>
+          <button type="submit" class="btn btn-primary">Create Project →</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/history.js"></script>
+  <script src="js/component-registry.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/inspector.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

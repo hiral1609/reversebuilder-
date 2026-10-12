@@ -1,0 +1,616 @@
+[
+  {
+    "id": "tpl-saas-landing",
+    "name": "SaaS Landing Page",
+    "category": "SaaS & Software",
+    "description": "High-converting layout for modern cloud platforms, APIs, and software products.",
+    "thumbnail": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
+    "theme": {
+      "primaryColor": "#4f46e5",
+      "secondaryColor": "#06b6d4",
+      "backgroundColor": "#ffffff",
+      "textColor": "#0f172a",
+      "fontFamily": "'Inter', sans-serif"
+    },
+    "sections": [
+      {
+        "id": "tpl-saas-nav",
+        "type": "navbar",
+        "name": "Navigation Bar",
+        "props": {
+          "brandName": "CloudPulse",
+          "links": [
+            { "label": "Features", "href": "#features" },
+            { "label": "Metrics", "href": "#stats" },
+            { "label": "Pricing", "href": "#pricing" },
+            { "label": "Contact", "href": "#contact" }
+          ],
+          "ctaText": "Start Free Trial",
+          "ctaHref": "#pricing"
+        },
+        "styles": { "paddingTop": 18, "paddingBottom": 18, "backgroundColor": "#ffffff", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-saas-hero",
+        "type": "hero",
+        "name": "Hero Section",
+        "props": {
+          "badge": "⚡ Introducing CloudPulse 2.0",
+          "heading": "Unified Observability for High-Velocity Teams",
+          "subheading": "Monitor microservices, optimize performance bottlenecks, and scale infrastructure without breaking your budget.",
+          "primaryButtonText": "Deploy in 5 Minutes",
+          "primaryButtonHref": "#pricing",
+          "secondaryButtonText": "Interactive Sandbox",
+          "secondaryButtonHref": "#features",
+          "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+          "imageAlt": "CloudPulse Dashboard"
+        },
+        "styles": { "paddingTop": 80, "paddingBottom": 80, "backgroundColor": "#ffffff", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-saas-feat",
+        "type": "features",
+        "name": "Feature Highlights",
+        "props": {
+          "badge": "Platform Capabilities",
+          "heading": "Engineered for 99.999% Reliability",
+          "description": "Real-time telemetry, automated anomaly alerts, and deep tracing in a single unified dashboard.",
+          "items": [
+            { "icon": "⚡", "title": "Sub-Millisecond Tracing", "description": "Detect slow database queries and network stalls with distributed tracing." },
+            { "icon": "🔒", "title": "Zero-Trust Security", "description": "End-to-end encryption with SOC2 Type II and HIPAA compliant audit trails." },
+            { "icon": "📊", "title": "Predictive Scaling", "description": "ML-driven autoscaling algorithms that optimize cloud compute expenditure." }
+          ]
+        },
+        "styles": { "paddingTop": 80, "paddingBottom": 80, "backgroundColor": "#f8fafc", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-saas-stats",
+        "type": "stats",
+        "name": "Key Metrics",
+        "props": {
+          "heading": "Proven at Scale",
+          "items": [
+            { "value": "12B+", "label": "Telemetry Events / Day" },
+            { "value": "99.99%", "label": "SLA Uptime" },
+            { "value": "4.2x", "label": "Faster MTTR" },
+            { "value": "15,000+", "label": "Engineering Teams" }
+          ]
+        },
+        "styles": { "paddingTop": 60, "paddingBottom": 60, "backgroundColor": "#ffffff", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-saas-pricing",
+        "type": "pricing",
+        "name": "Pricing Matrix",
+        "props": {
+          "badge": "Pricing Plans",
+          "heading": "Predictable Pricing, No Hidden Fees",
+          "description": "Start free and scale seamlessly as your telemetry volume expands.",
+          "items": [
+            {
+              "name": "Developer",
+              "price": "$0",
+              "period": "/mo",
+              "description": "For side projects and personal APIs.",
+              "isPopular": false,
+              "features": ["3 Services", "7-Day retention", "Community Discord", "Basic anomaly alerts"],
+              "ctaText": "Get Started"
+            },
+            {
+              "name": "Growth",
+              "price": "$49",
+              "period": "/mo",
+              "description": "For high-velocity startups and scaling products.",
+              "isPopular": true,
+              "features": ["Unlimited services", "30-Day retention", "Slack & PagerDuty alerts", "AI Root-Cause engine", "Priority support"],
+              "ctaText": "Start Free Trial"
+            },
+            {
+              "name": "Enterprise",
+              "price": "$199",
+              "period": "/mo",
+              "description": "For large organizations with strict compliance.",
+              "isPopular": false,
+              "features": ["Unlimited retention", "Dedicated VPC deployment", "Custom SAML/SSO", "24/7 Phone SLA"],
+              "ctaText": "Talk to Sales"
+            }
+          ]
+        },
+        "styles": { "paddingTop": 80, "paddingBottom": 80, "backgroundColor": "#f8fafc", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-saas-cta",
+        "type": "cta",
+        "name": "Call to Action",
+        "props": {
+          "heading": "Ready to gain full clarity into your stack?",
+          "description": "Join 15,000+ teams who ship resilient software with CloudPulse today.",
+          "buttonText": "Start 14-Day Free Trial",
+          "buttonHref": "#pricing"
+        },
+        "styles": { "paddingTop": 80, "paddingBottom": 80, "backgroundColor": "#4f46e5", "textColor": "#ffffff" }
+      },
+      {
+        "id": "tpl-saas-footer",
+        "type": "footer",
+        "name": "Footer",
+        "props": {
+          "brandName": "CloudPulse",
+          "description": "Next-generation distributed systems observability platform.",
+          "copyright": "© 2026 CloudPulse Technologies, Inc. All rights reserved."
+        },
+        "styles": { "paddingTop": 60, "paddingBottom": 40, "backgroundColor": "#0b0f19", "textColor": "#f8fafc" }
+      }
+    ]
+  },
+  {
+    "id": "tpl-dev-portfolio",
+    "name": "Developer Portfolio",
+    "category": "Portfolio & Personal",
+    "description": "Clean, high-impact portfolio showcasing engineering projects, tech stack, and experience.",
+    "thumbnail": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80",
+    "theme": {
+      "primaryColor": "#2563eb",
+      "secondaryColor": "#38bdf8",
+      "backgroundColor": "#ffffff",
+      "textColor": "#0f172a",
+      "fontFamily": "'Inter', sans-serif"
+    },
+    "sections": [
+      {
+        "id": "tpl-dev-nav",
+        "type": "navbar",
+        "name": "Navigation Bar",
+        "props": {
+          "brandName": "Arjun Patel // Dev",
+          "links": [
+            { "label": "Projects", "href": "#features" },
+            { "label": "Experience", "href": "#stats" },
+            { "label": "Testimonials", "href": "#testimonials" },
+            { "label": "Contact", "href": "#contact" }
+          ],
+          "ctaText": "Resume PDF",
+          "ctaHref": "#contact"
+        },
+        "styles": { "paddingTop": 18, "paddingBottom": 18, "backgroundColor": "#ffffff", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-dev-hero",
+        "type": "hero",
+        "name": "Hero Section",
+        "props": {
+          "badge": "👋 Open to Full-Stack & System Roles",
+          "heading": "Full-Stack Architect Crafting High-Scale Systems",
+          "subheading": "Specializing in distributed backend infrastructure, Node.js, TypeScript, and clean reactive user interfaces.",
+          "primaryButtonText": "View Selected Work",
+          "primaryButtonHref": "#features",
+          "secondaryButtonText": "Get in Touch",
+          "secondaryButtonHref": "#contact",
+          "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
+          "imageAlt": "Arjun Patel Profile"
+        },
+        "styles": { "paddingTop": 80, "paddingBottom": 80, "backgroundColor": "#ffffff", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-dev-feat",
+        "type": "features",
+        "name": "Featured Projects",
+        "props": {
+          "badge": "Portfolio",
+          "heading": "Featured Engineering Projects",
+          "description": "Selected open source tools, scalable systems, and developer utilities.",
+          "items": [
+            { "icon": "🚀", "title": "HyperQueue", "description": "Distributed in-memory message broker processing 250k msgs/sec with Raft consensus." },
+            { "icon": "⚡", "title": "AetherUI", "description": "Zero-runtime CSS-in-JS compiler for modern web browsers with sub-millisecond build times." },
+            { "icon": "🛡️", "title": "SentinelDB", "description": "Automated security scanning CLI analyzing SQL injection vectors across GitHub pull requests." }
+          ]
+        },
+        "styles": { "paddingTop": 80, "paddingBottom": 80, "backgroundColor": "#f8fafc", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-dev-stats",
+        "type": "stats",
+        "name": "Career Stats",
+        "props": {
+          "heading": "By The Numbers",
+          "items": [
+            { "value": "8+", "label": "Years Experience" },
+            { "value": "35+", "label": "Production Apps Shipped" },
+            { "value": "2.4M", "label": "Active Users Served" },
+            { "value": "1.2k", "label": "GitHub Stars" }
+          ]
+        },
+        "styles": { "paddingTop": 60, "paddingBottom": 60, "backgroundColor": "#ffffff", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-dev-contact",
+        "type": "contact",
+        "name": "Contact Me",
+        "props": {
+          "badge": "Let's Connect",
+          "heading": "Have a project in mind or want to talk tech?",
+          "description": "Drop me a message and I will get back to you within 24 hours.",
+          "buttonText": "Send Message"
+        },
+        "styles": { "paddingTop": 80, "paddingBottom": 80, "backgroundColor": "#ffffff", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-dev-footer",
+        "type": "footer",
+        "name": "Footer",
+        "props": {
+          "brandName": "Arjun Patel",
+          "description": "Senior Software Architect & Full-Stack Developer.",
+          "copyright": "© 2026 Arjun Patel. Handcrafted with semantic HTML & CSS."
+        },
+        "styles": { "paddingTop": 40, "paddingBottom": 30, "backgroundColor": "#0b0f19", "textColor": "#f8fafc" }
+      }
+    ]
+  },
+  {
+    "id": "tpl-startup-home",
+    "name": "Startup Homepage",
+    "category": "Startup & Venture",
+    "description": "Vibrant, investor-ready startup homepage built for rapid user acquisition and conversions.",
+    "thumbnail": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=600&q=80",
+    "theme": {
+      "primaryColor": "#7c3aed",
+      "secondaryColor": "#ec4899",
+      "backgroundColor": "#ffffff",
+      "textColor": "#0f172a",
+      "fontFamily": "'Inter', sans-serif"
+    },
+    "sections": [
+      {
+        "id": "tpl-start-nav",
+        "type": "navbar",
+        "name": "Navigation Bar",
+        "props": {
+          "brandName": "VortexAI",
+          "links": [
+            { "label": "Product", "href": "#features" },
+            { "label": "Traction", "href": "#stats" },
+            { "label": "Testimonials", "href": "#testimonials" },
+            { "label": "Get Started", "href": "#cta" }
+          ],
+          "ctaText": "Early Access",
+          "ctaHref": "#cta"
+        },
+        "styles": { "paddingTop": 18, "paddingBottom": 18, "backgroundColor": "#ffffff", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-start-hero",
+        "type": "hero",
+        "name": "Hero Section",
+        "props": {
+          "badge": "🚀 Backed by Y Combinator S25",
+          "heading": "Autonomous Financial Workflows Powered by AI",
+          "subheading": "Automate billing reconciliation, invoice matching, and ledger sync with zero human data-entry mistakes.",
+          "primaryButtonText": "Claim Free Access",
+          "primaryButtonHref": "#cta",
+          "secondaryButtonText": "Watch 2-Min Demo",
+          "secondaryButtonHref": "#features",
+          "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+          "imageAlt": "VortexAI Workflow Automation"
+        },
+        "styles": { "paddingTop": 80, "paddingBottom": 80, "backgroundColor": "#ffffff", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-start-feat",
+        "type": "features",
+        "name": "Core Value Pillars",
+        "props": {
+          "badge": "Autonomous Engine",
+          "heading": "Reinventing CFO Operations",
+          "description": "Cut bookkeeping overhead from 40 hours a week down to 3 minutes.",
+          "items": [
+            { "icon": "🤖", "title": "Agentic Matching", "description": "Proprietary models parse messy bank receipts across 90+ currencies." },
+            { "icon": "⚡", "title": "Direct ERP Sync", "description": "Bi-directional instant synchronization with NetSuite, QuickBooks, and Xero." },
+            { "icon": "📈", "title": "Real-Time Runway Forecast", "description": "Interactive simulations predicting cash flow dynamics 18 months out." }
+          ]
+        },
+        "styles": { "paddingTop": 80, "paddingBottom": 80, "backgroundColor": "#f8fafc", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-start-stats",
+        "type": "stats",
+        "name": "Startup Traction",
+        "props": {
+          "heading": "Trusted by Rapidly Growing Startups",
+          "items": [
+            { "value": "$180M+", "label": "Processed Monthly" },
+            { "value": "99.4%", "label": "Matching Accuracy" },
+            { "value": "40hrs", "label": "Saved Per Month" },
+            { "value": "450+", "label": "Active Startups" }
+          ]
+        },
+        "styles": { "paddingTop": 60, "paddingBottom": 60, "backgroundColor": "#ffffff", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-start-test",
+        "type": "testimonials",
+        "name": "Founder Testimonials",
+        "props": {
+          "badge": "Testimonials",
+          "heading": "What Founders Are Saying",
+          "description": "Real words from Series A and B finance teams.",
+          "items": [
+            {
+              "quote": "VortexAI automated our entire multi-currency billing reconciliation. It feels like magic.",
+              "author": "Maya Lin",
+              "role": "CEO at OmniStack",
+              "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80"
+            },
+            {
+              "quote": "Our month-end close dropped from 5 business days to 45 minutes on day one.",
+              "author": "Jordan Reed",
+              "role": "CFO at NextWave",
+              "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80"
+            }
+          ]
+        },
+        "styles": { "paddingTop": 80, "paddingBottom": 80, "backgroundColor": "#ffffff", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-start-cta",
+        "type": "cta",
+        "name": "Final CTA",
+        "props": {
+          "heading": "Accelerate Your Financial Velocity",
+          "description": "Get 3 months free on our Founder Tier. No credit card required.",
+          "buttonText": "Start Free Today",
+          "buttonHref": "#contact"
+        },
+        "styles": { "paddingTop": 80, "paddingBottom": 80, "backgroundColor": "#7c3aed", "textColor": "#ffffff" }
+      },
+      {
+        "id": "tpl-start-footer",
+        "type": "footer",
+        "name": "Footer",
+        "props": {
+          "brandName": "VortexAI",
+          "description": "Intelligent automated accounting infrastructure for modern enterprises.",
+          "copyright": "© 2026 VortexAI, Inc. All rights reserved."
+        },
+        "styles": { "paddingTop": 60, "paddingBottom": 40, "backgroundColor": "#0b0f19", "textColor": "#f8fafc" }
+      }
+    ]
+  },
+  {
+    "id": "tpl-agency-website",
+    "name": "Agency Website",
+    "category": "Creative & Studio",
+    "description": "Sophisticated, typography-led digital studio and creative agency showcase.",
+    "thumbnail": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80",
+    "theme": {
+      "primaryColor": "#0f172a",
+      "secondaryColor": "#64748b",
+      "backgroundColor": "#ffffff",
+      "textColor": "#0f172a",
+      "fontFamily": "'Inter', sans-serif"
+    },
+    "sections": [
+      {
+        "id": "tpl-agency-nav",
+        "type": "navbar",
+        "name": "Navigation Bar",
+        "props": {
+          "brandName": "MONOLITH // STUDIO",
+          "links": [
+            { "label": "Works", "href": "#features" },
+            { "label": "Services", "href": "#stats" },
+            { "label": "Testimonials", "href": "#testimonials" },
+            { "label": "Inquire", "href": "#contact" }
+          ],
+          "ctaText": "Start a Project",
+          "ctaHref": "#contact"
+        },
+        "styles": { "paddingTop": 20, "paddingBottom": 20, "backgroundColor": "#ffffff", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-agency-hero",
+        "type": "hero",
+        "name": "Hero Section",
+        "props": {
+          "badge": "✦ Brand & Digital Architecture",
+          "heading": "We Design Iconic Digital Products That Redefine Categories",
+          "subheading": "Award-winning strategic branding, interactive web experiences, and bespoke digital platforms for visionary founders.",
+          "primaryButtonText": "View Our Portfolio",
+          "primaryButtonHref": "#features",
+          "secondaryButtonText": "Book Consultation",
+          "secondaryButtonHref": "#contact",
+          "imageUrl": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
+          "imageAlt": "Monolith Studio Work"
+        },
+        "styles": { "paddingTop": 90, "paddingBottom": 90, "backgroundColor": "#ffffff", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-agency-feat",
+        "type": "features",
+        "name": "Capabilities",
+        "props": {
+          "badge": "Practice Areas",
+          "heading": "Precision in Every Discipline",
+          "description": "From seed stage identity to public company web transformation.",
+          "items": [
+            { "icon": "📐", "title": "Brand Identity & Systems", "description": "Typographic hierarchies, design languages, and guidelines built to endure." },
+            { "icon": "🖥️", "title": "Bespoke Web Engineering", "description": "Fluid interactive frontends engineered with flawless 60fps animations." },
+            { "icon": "🎯", "title": "Product Strategy & UX", "description": "Data-informed interaction architecture designed to maximize user retention." }
+          ]
+        },
+        "styles": { "paddingTop": 80, "paddingBottom": 80, "backgroundColor": "#f8fafc", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-agency-test",
+        "type": "testimonials",
+        "name": "Client Voices",
+        "props": {
+          "badge": "Partnerships",
+          "heading": "Trusted by Category Leaders",
+          "description": "Collaborations that moved the needle.",
+          "items": [
+            {
+              "quote": "Monolith delivered the highest quality brand overhaul we have experienced in a decade.",
+              "author": "Julian Thorne",
+              "role": "Founder, Thorne & Co.",
+              "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80"
+            },
+            {
+              "quote": "Our conversion rates doubled within 30 days of launching the new flagship site.",
+              "author": "Chloe Sterling",
+              "role": "CMO, Verve Mobility",
+              "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80"
+            }
+          ]
+        },
+        "styles": { "paddingTop": 80, "paddingBottom": 80, "backgroundColor": "#ffffff", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-agency-contact",
+        "type": "contact",
+        "name": "Inquiry Form",
+        "props": {
+          "badge": "New Commissions",
+          "heading": "Let's craft your next digital milestone",
+          "description": "We are currently accepting select partnerships for Q3 and Q4.",
+          "buttonText": "Submit Project Brief"
+        },
+        "styles": { "paddingTop": 80, "paddingBottom": 80, "backgroundColor": "#f8fafc", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-agency-footer",
+        "type": "footer",
+        "name": "Footer",
+        "props": {
+          "brandName": "MONOLITH",
+          "description": "A global independent digital design and architecture collective.",
+          "copyright": "© 2026 MONOLITH STUDIO. All rights reserved."
+        },
+        "styles": { "paddingTop": 60, "paddingBottom": 40, "backgroundColor": "#0b0f19", "textColor": "#f8fafc" }
+      }
+    ]
+  },
+  {
+    "id": "tpl-product-landing",
+    "name": "Product Landing Page",
+    "category": "Hardware & Commerce",
+    "description": "Bold, product-centric showcase highlighting physical hardware or lifestyle applications.",
+    "thumbnail": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80",
+    "theme": {
+      "primaryColor": "#ea580c",
+      "secondaryColor": "#f59e0b",
+      "backgroundColor": "#ffffff",
+      "textColor": "#0f172a",
+      "fontFamily": "'Inter', sans-serif"
+    },
+    "sections": [
+      {
+        "id": "tpl-prod-nav",
+        "type": "navbar",
+        "name": "Navigation Bar",
+        "props": {
+          "brandName": "AuraAudio",
+          "links": [
+            { "label": "Aura One", "href": "#features" },
+            { "label": "Acoustics", "href": "#stats" },
+            { "label": "Specs", "href": "#pricing" },
+            { "label": "Reviews", "href": "#testimonials" }
+          ],
+          "ctaText": "Pre-Order ($299)",
+          "ctaHref": "#pricing"
+        },
+        "styles": { "paddingTop": 18, "paddingBottom": 18, "backgroundColor": "#ffffff", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-prod-hero",
+        "type": "hero",
+        "name": "Product Hero",
+        "props": {
+          "badge": "🎧 Audiophile Studio Series",
+          "heading": "Spatial Sound Reimagined. Pure Acoustic Fidelity.",
+          "subheading": "Featuring custom 45mm beryllium drivers, 60-hour ultra battery endurance, and active spatial cancellation.",
+          "primaryButtonText": "Order Aura One Now",
+          "primaryButtonHref": "#pricing",
+          "secondaryButtonText": "Explore Acoustic Specs",
+          "secondaryButtonHref": "#features",
+          "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=80",
+          "imageAlt": "Aura One Wireless Studio Headphones"
+        },
+        "styles": { "paddingTop": 80, "paddingBottom": 80, "backgroundColor": "#ffffff", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-prod-feat",
+        "type": "features",
+        "name": "Hardware Features",
+        "props": {
+          "badge": "Engineering Masterpiece",
+          "heading": "Sound Engineering Without Compromise",
+          "description": "Crafted with lightweight aerospace aluminum and memory foam.",
+          "items": [
+            { "icon": "🔊", "title": "Beryllium Drivers", "description": "Near-zero distortion across 5Hz - 45kHz frequency response." },
+            { "icon": "🔋", "title": "60-Hour Playtime", "description": "Quick-charge provides 8 hours of playback from a 10-minute USB-C charge." },
+            { "icon": "📡", "title": "Lossless Wireless", "description": "Ultra low-latency LDAC & aptX HD wireless audio streaming." }
+          ]
+        },
+        "styles": { "paddingTop": 80, "paddingBottom": 80, "backgroundColor": "#f8fafc", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-prod-stats",
+        "type": "stats",
+        "name": "Audio Specs",
+        "props": {
+          "heading": "Acoustic Benchmark",
+          "items": [
+            { "value": "45mm", "label": "Custom Driver" },
+            { "value": "60 hrs", "label": "Battery Life" },
+            { "value": "-42dB", "label": "Active Noise Cancelling" },
+            { "value": "240g", "label": "Ultra Lightweight" }
+          ]
+        },
+        "styles": { "paddingTop": 60, "paddingBottom": 60, "backgroundColor": "#ffffff", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-prod-pricing",
+        "type": "pricing",
+        "name": "Pre-Order Editions",
+        "props": {
+          "badge": "Special Launch Edition",
+          "heading": "Choose Your Aura Edition",
+          "description": "Includes 2-year international warranty and hardshell travel case.",
+          "items": [
+            {
+              "name": "Aura Core",
+              "price": "$249",
+              "period": "one-time",
+              "description": "Standard wireless studio headphones in Matte Obsidian.",
+              "isPopular": false,
+              "features": ["45mm Beryllium Drivers", "40-Hour Battery", "Travel Pouch", "USB-C Audio Cable"],
+              "ctaText": "Order Core"
+            },
+            {
+              "name": "Aura Pro Studio",
+              "price": "$299",
+              "period": "one-time",
+              "description": "The flagship edition with active spatial cancellation & DAC.",
+              "isPopular": true,
+              "features": ["Spatial Tracking", "60-Hour Battery", "Hard Aluminium Case", "Lossless USB-C DAC Cable", "Free Monogramming"],
+              "ctaText": "Order Pro Studio"
+            }
+          ]
+        },
+        "styles": { "paddingTop": 80, "paddingBottom": 80, "backgroundColor": "#f8fafc", "textColor": "#0f172a" }
+      },
+      {
+        "id": "tpl-prod-footer",
+        "type": "footer",
+        "name": "Footer",
+        "props": {
+          "brandName": "AuraAudio",
+          "description": "Precision acoustic instruments for creators, musicians, and audiophiles.",
+          "copyright": "© 2026 AuraAudio Lab. Designed in California."
+        },
+        "styles": { "paddingTop": 60, "paddingBottom": 40, "backgroundColor": "#0b0f19", "textColor": "#f8fafc" }
+      }
+    ]
+  }
+]
