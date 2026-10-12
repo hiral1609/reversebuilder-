@@ -46,7 +46,7 @@ app.use(errorHandler);
 
 // Start server if executed directly
 if (require.main === module) {
-  const server = app.listen(config.port, () => {
+  const server = app.listen(config.port, '0.0.0.0', () => {
     console.log(`\n==================================================`);
     console.log(`🚀 ReverseBuilder Server active`);
     console.log(`📍 Web Interface: http://localhost:${config.port}`);

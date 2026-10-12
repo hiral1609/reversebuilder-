@@ -1,0 +1,8 @@
+node_modules
+server/data/projects/*
+!server/data/projects/.gitkeep
+server/data/uploads/*
+!server/data/uploads/.gitkeep
+.git
+*.log
+*.tmp

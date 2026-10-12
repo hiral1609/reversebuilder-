@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server/server.js",
     "dev": "node --watch server/server.js",
-    "test": "node --test server/tests/*.test.js"
+    "test": "node --test server/tests/*.test.js",
+    "build": "echo 'Build complete'"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -18,5 +19,8 @@
   },
   "optionalDependencies": {
     "playwright": "^1.64.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
